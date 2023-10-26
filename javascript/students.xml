@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <id>1</id>
+        <name>John Doe</name>
+        <age>20</age>
+        <major>Computer Science</major>
+    </student>
+    <student>
+        <id>2</id>
+        <name>Alice Smith</name>
+        <age>21</age>
+        <major>Engineering</major>
+    </student>
+    <student>
+        <id>3</id>
+        <name>Mary Johnson</name>
+        <age>19</age>
+        <major>Mathematics</major>
+    </student>
+</students>

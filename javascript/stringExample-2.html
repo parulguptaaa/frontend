@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixing capitalisation</title>
+</head>
+<body>
+    <h2> fixing capitalisation</h2>
+    <div class="output">
+        <ul>
+
+        </ul>
+    </div>
+    <script>
+        const list=document.querySelector('.output ul');
+        list.innerHtml='';
+        let cities=['mumBai','DELhi','JaIPuR','gOa'];
+        for(let i=0;i<cities.length;i++){
+            let lowerCase=cities[i].toLowerCase();
+            let firstAlpha= lowerCase.slice(0,1);
+            lowerCase=lowerCase.replace(firstAlpha,firstAlpha.toUpperCase());
+            let listItem=document.createElement('li');
+            listItem.textContent=lowerCase;
+            list.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch and Display XML Data</title>
+</head>
+<body>
+    <h1>XML Data Display</h1>
+    <div id="displayDiv">
+		<ul>
+			
+		</ul>
+	</div>
+
+    <script>
+        // Fetch data from an XML file
+        fetch('books1.xml')
+            .then(response => response.text())
+            .then(data => {
+                // Parse the fetched XML data
+                let parser = new DOMParser();
+                let xmlDoc = parser.parseFromString(data, 'text/xml');
+
+                for (let i=0; i<7; i++)
+				{
+					let title = xmlDoc.getElementsByTagName('title')[i].textContent;
+					let author = xmlDoc.getElementsByTagName('author')[i].textContent;
+					let publication_year = xmlDoc.getElementsByTagName('publication_year')[i].textContent;
+
+					let displayDiv = document.getElementById('displayDiv');
+					displayDiv.innerHTML += <li>${title} by ${author} published in ${publication_year}</li>;
+				}
+            })
+    </script>
+</body>
+</html>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <publication_year>1960</publication_year>
+  </book>
+  <book>
+    <title>Pride and Prejudice</title>
+    <author>Jane Austen</author>
+    <publication_year>1813</publication_year>
+  </book>
+  <book>
+    <title>The Catcher in the Rye</title>
+    <author>J.D. Salinger</author>
+    <publication_year>1951</publication_year>
+  </book>
+  <book>
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author>J.K. Rowling</author>
+    <publication_year>1997</publication_year>
+  </book>
+  <book>
+    <title>The Hobbit</title>
+    <author>J.R.R. Tolkien</author>
+    <publication_year>1937</publication_year>
+  </book>
+  <book>
+    <title>Brave New World</title>
+    <author>Aldous Huxley</author>
+    <publication_year>1932</publication_year>
+  </book>
+  <book>
+    <title>Crime and Punishment</title>
+    <author>Fyodor Dostoevsky</author>
+    <publication_year>1866</publication_year>
+  </book>
+</library> -->

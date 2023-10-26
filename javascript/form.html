@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> <font color=blue>Please enter the following
+        bioData</font></h1>
+        <FORM name="fome1" Method= " get " Action= " URL " >
+        First Name: <INPUT TYPE="TEXT" NAME="FName" value="fname"
+        SIZE="15" MAXLENGTH="25"><BR>
+        Last Name: <INPUT TYPE="TEXT" NAME="LName"
+        SIZE="15" MAXLENGTH="25"><BR>
+        Nationality: <INPUT TYPE="TEXT" NAME="Country"
+        SIZE="25" MAXLENGTH="25"><BR>
+        The Phone Number: <INPUT TYPE="checkbox" NAME="Phone"
+        SIZE="15" MAXLENGTH="12" checked><BR>
+        </FORM>
+        <button id="hello" onclick="show_now()">this button shows the date</button>
+        <!-- <button onlick=document.getElementById(hello).innerHTML=Date()>The Time is ?</button> -->
+        <script>function show_now() { 
+            var my_time = new Date();
+            var daylist=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+            var format=daylist[my_time.getDay()]+","+my_time.getDate()+"/"+(my_time.getMonth()+1)+"/"+my_time.getFullYear();
+            document.getElementById('hello').innerHTML=format;
+            }</script>
+        
+</body>
+</html>

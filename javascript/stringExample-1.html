@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixing capitalisation</title>
+</head>
+<body>
+    <h2> fixing greeetings</h2>
+    <div class="output">
+        <ul>
+        </ul>
+    </div>
+    <script>
+        const list=document.querySelector('.output ul');
+        list.innerHTML='';
+        let greetings=['happy birthday!','happy holi','holi mubarak ho','get well soon'];
+
+        for(let i=0;i<greeetings.length;i++){
+            if(greetings[i].indexOf("holi")!=-1){
+                let listItem=document.createElement('li');
+                listItem.textContent=greetings[i];
+                list.appendChild(listItem);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+/* h1{
+    color: #000;
+}
+p{
+    color:#ffffff;
+
+}
+button{
+    color:darkgreen;
+    background-color: cadetblue;
+}
+body{
+    background-color:darkcyan;
+    /* rgb(255,0,0) */
+/* } */
+
+/* universal selector */
+/* *{
+    color:pink;
+
+} */
+/* element selector */
+button{
+    color:darkgreen;
+    background-color: rgb(206, 253, 255);
+}
+/* id selector */
+/* #head1{
+    color:yellow;
+
+} */
+/* class selector */
+/* .cl1{
+    color:black;
+}   */
+/* the later changes have higher priority */
+#box{
+    background-color:blue;
+    text-align:right;
+    text-decoration:line-through;
+    font-weight:bold;
+}
+/* a{ */
+    /* to remove underline from links */
+/* text-decoration:none */
+/* }  */
+#one{
+    font-size:25px;
+}
+#two{
+    font-size:10px;
+}
+#three{
+    font-size:16px;
+}
+h1{
+    text-align: center;
+    text-transform: capitalize;
+}
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#outer{
+    font-size: 25px;
+    height: 30px;
+    width:500px;
+    background-color: aqua;
+    border-style:dashed;
+    border-width: 5px;
+    /* text-align: right; */
+
+}
+/* copies properties of parents to child */
+#inner{
+    font-size: 10px;
+    background-color: chartreuse;
+    text-align: left;
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 20px;
+    color:#0f1111;
+    display:inline;
+}
+*{
+    padding:0;
+    margin:0;
+}
+#navbar{
+    height:60px;
+    background-color: #0f1111;
+}
+button{
+    background-color: #f08804;
+    color:white;
+
+}
+#logo{
+    color:#f08804;
+    margin-left: 200px;
+}
+a{
+    color:white;
+    margin-left: 200px;
+    text-decoration:none;
+}
+input{
+    margin-left:200px;
+}
+
+
+

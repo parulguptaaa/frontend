@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch and Display XML Data</title>
+</head>
+<body>
+    <h1>XML Data Display</h1>
+    <div id="displayDiv">
+		<ul>
+
+		</ul>
+	</div>
+
+    <script>
+        // Fetch data from an XML file
+        fetch('books1.xml')
+            .then(response => response.text())
+            .then(data => {
+                // Parse the fetched XML data
+                let parser = new DOMParser();
+                let xmlDoc = parser.parseFromString(data, 'text/xml');
+
+                for (let i=0; i<7; i++)
+				{
+					let title = xmlDoc.getElementsByTagName('title')[i].textContent;
+					let author = xmlDoc.getElementsByTagName('author')[i].textContent;
+					let publication_year = xmlDoc.getElementsByTagName('publication_year')[i].textContent;
+
+					let displayDiv = document.getElementById('displayDiv');
+					displayDiv.innerHTML += <li>${title} by ${author} published in ${publication_year}</li>;
+				}
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Data</title>
+</head>
+<body>
+    <h1>Movie Data</h1>
+    <button onclick="loadXMLDoc()">Load Movie Data</button>
+    <div id="movieData"></div>
+
+    <script>
+        function loadXMLDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    displayMovieData(this);
+                }
+            };
+            xhttp.open("GET", "movies.xml", true);
+            xhttp.send();
+        }
+
+        function displayMovieData(xml) {
+            var xmlDoc = xml.responseXML;
+            var movies = xmlDoc.getElementsByTagName("movie");
+            var output = "<ul>";
+
+            for (var i = 0; i < movies.length; i++) {
+                var title = movies[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                var director = movies[i].getElementsByTagName("director")[0].childNodes[0].nodeValue;
+                var releaseYear = movies[i].getElementsByTagName("release_year")[0].childNodes[0].nodeValue;
+
+                output += "<li><strong>Title:</strong> " + title + "<br><strong>Director:</strong> " + director + "<br><strong>Release Year:</strong> " + releaseYear + "</li>";
+            }
+
+            output += "</ul>";
+            document.getElementById("movieData").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
